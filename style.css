@@ -1,68 +1,109 @@
 html {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  --color-00: #DBDBDB;
+  --color-01: #C9B194;
+  --color-02: #A08963;
+  --color-025: #706d54b6;
+  --color-03: #706D54;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  max-width: unset;
+  overflow: hidden;
+  background-color: var(--color-00);
+  color: var(--color-03);
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  padding: 50px;
+}
+
+#trilobite,
+#ammonite,
+#crinoid {
+  color: var(--color-025);
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.file-up-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  background-color: var(--color-03);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.lucide-file-up {
+  --btn-size: 150px;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  color: var(--color-00);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rotate:hover {
+  /* animation: rotate 0.5s linear forwards; */
+}
+
+.scale {
+  transition: all 3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scale:hover {
+  transform: scale(1.25);
+}
+
+.dragover {
+  background-color: #e0e0e0;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
   }
 
-  body {
-    width: 100vw;
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-    max-width: unset;
-    overflow: hidden;
+  25% {
+    transform: rotate(15deg);
   }
 
-  #container {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
+  75% {
+    transform: rotate(-15deg);
   }
 
-  .lucide-file-up {
-      width: 33vw;
-      height: 33vw;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    
-    .lucide-file-up:hover {
-        animation: rotate 0.5s linear forwards;
-    }
-    
-    .scale {
-        transition: all 3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    
-    .scale:hover {
-        /* transform: scale(1.25); */
-    }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 
-  .file-up-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 66vw;
-    height: 66vw;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    flex-direction: column;
+.opacity-in {
+  animation: opacity 0.5s ease-in-out forwards;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
   }
 
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    25% {
-      transform: rotate(15deg);
-    }
-    75% {
-      transform: rotate(-15deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
+  100% {
+    opacity: 1;
   }
+}
