@@ -39,7 +39,7 @@ const body = document.body;
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch("http://146.190.214.133/predict", {
+      const response = await fetch("https:///api.djmlabs.xyz/predict", {
         method: "POST",
         body: formData
       });
